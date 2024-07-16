@@ -1,0 +1,62 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	transition: background-color var(--transition);
+	text-transform: capitalize;
+	&.header--scrolling {
+		background-color: var(--bg-1);
+	}
+}
+.burger-btn {
+	display: none;
+	@include sm {
+		position: relative;
+		z-index: 200;
+		display: block;
+		width: 30px;
+		height: 20px;
+		background-color: transparent;
+		border: 0;
+		&:hover {
+			@media (any-hover) {
+				cursor: pointer;
+			}
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			width: 100%;
+			height: 2px;
+			background-color: var(--brand-1);
+			transition: all 0.3s ease 0s;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+	}
+	&.menu-active {
+		span {
+			width: 0;
+		}
+		&::before {
+			top: calc(50% - 1px);
+			transform: rotate(-45deg);
+		}
+		&::after {
+			bottom: calc(50% - 1px);
+			transform: rotate(45deg);
+		}
+	}
+}

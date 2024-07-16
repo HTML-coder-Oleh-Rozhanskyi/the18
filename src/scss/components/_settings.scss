@@ -1,0 +1,167 @@
+$canvas: 2560px;
+$container: 1510px;
+
+:root {
+	--bg-1: #f0f0f0;
+	--bg-2: #151515;
+	--white: #fff;
+	--black: #151515;
+	--transition: 0.3s;
+	--transition-long: 1s;
+	--font-family: "Neue Machina", sans-serif;
+	--second-family: "Inter", sans-serif;
+	--paddingInline: 80px;
+}
+
+@mixin xsm {
+	@media (max-width: 424.98px) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (max-width: 574.98px) {
+		@content;
+	}
+}
+@mixin m {
+	@media (max-width: 767.98px) {
+		@content;
+	}
+}
+@mixin t {
+	@media (max-width: 1023.98px) {
+		@content;
+	}
+}
+@mixin d {
+	@media (max-width: $container) {
+		@content;
+	}
+}
+@mixin focus {
+	@content;
+	&:focus-visible {
+		color: var(--black);
+	}
+}
+/*@mixin active {
+	@content;
+	&:active {
+			color: var(--black);
+	}
+}
+@mixin hover {
+	@content;
+	&:hover {
+		@media (any-hover) {
+		}
+	}
+}*/
+@mixin container {
+	@content;
+	max-width: calc($container + var(--paddingInline) * 2);
+	margin: 0 auto;
+	padding-inline: var(--paddingInline);
+}
+
+@mixin hover {
+	&::before {
+		@content;
+		content: "";
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--brand-1);
+		transform: scale(0);
+		transition: transform var(--transition);
+	}
+	&:hover::before {
+		@media (any-hover) {
+			transform: scale(1);
+		}
+	}
+}
+
+@function vwc($n) {
+	@return calc($n / $canvas * 100vw);
+}
+@function vw($n) {
+	@return calc($n / $container * 100vw);
+}
+@function vwt($n) {
+	@return calc($n / 1023.98px * 100vw);
+}
+@function vwm($n) {
+	@return calc($n / 767.98px * 100vw);
+}
+
+html {
+	scroll-padding-top: 68px;
+}
+.body {
+	position: relative;
+	overflow-x: clip;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: var(--font-family);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--black);
+	background-color: var(--bg-1);
+	&.menu-active {
+		overflow-y: hidden;
+		padding-right: 10px;
+	}
+}
+
+.visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	border: 0 !important;
+	padding: 0 !important;
+	white-space: nowrap !important;
+	clip-path: inset(100%) !important;
+	clip: rect(0 0 0 0) !important;
+	overflow: hidden !important;
+}
+
+/* 
+запобігти скачку контента при появі полоси прокрутки
+.body { padding: 0 calc(20px - (100vw - 100%)) 0 0; }
+*/
+
+// [class*="__container"] { }
+
+/* Загальний стиль для всіх веб-кіт браузерів */
+//::-webkit-scrollbar {
+//width: 10px; /* Ширина смужки прокрутки */
+//}
+//::-webkit-scrollbar-track {
+//	background: transparent; /* Колір треку */
+//}
+//
+//::-webkit-scrollbar-thumb {
+//	background-color: var(--bg-2); /* Колір смужки прокрутки */
+//	border-radius: 10px; /* Округлені краї смужки прокрутки */
+//	border: none; /* Простір між смужкою і треком */
+//}
+//::-webkit-scrollbar-thumb:hover {
+//	background-color: var(--bg-2); /* Колір смужки при наведенні */
+//}
+// для firefox
+// .body {
+// scrollbar-width: thin; /* Може бути auto, thin або none */
+// scrollbar-color: #888 #f1f1f1; /* Колір смужки прокрутки та треку */
+// }
+// /* Додатковий стиль для окремих частин смужки */
+// .scrollbar {
+// scrollbar-color: #888 #f1f1f1;
+// scrollbar-width: thin;
+// }
