@@ -584,6 +584,74 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"dV6cC":[function(require,module,exports) {
+var _menuBurgerJs = require("./components/menu_burger.js");
+
+},{"./components/menu_burger.js":"kg4Ds"}],"kg4Ds":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "burger", ()=>burger);
+function burger() {
+    const menuBtn = document.querySelector(".burger-btn");
+    const menuWrap = document.querySelector(".menu");
+    const menuLink = document.querySelectorAll(".menu__link");
+    const headerSite = document.querySelector(".header");
+    const body = document.querySelector(".body");
+    const toggleMenu = ()=>{
+        menuWrap.classList.toggle("menu-active");
+        menuBtn.classList.toggle("menu-active");
+        headerSite.classList.toggle("menu-active");
+        if (menuWrap.classList.contains("menu-active")) {
+            menuBtn.setAttribute("aria-laberl", "close menu");
+            menuBtn.setAttribute("aria-expanded", "true");
+        } else {
+            menuBtn.setAttribute("aria-laberl", "open menu");
+            menuBtn.setAttribute("aria-expanded", "false");
+        }
+    };
+    menuBtn.addEventListener("click", ()=>{
+        toggleMenu(body.classList.toggle("menu-active"));
+    });
+    menuLink.forEach((link)=>{
+        link.addEventListener("click", ()=>{
+            toggleMenu(body.classList.remove("menu-active"));
+        });
+    });
+    for(let i = 0; i < menuLink.length; i++)menuLink[i].addEventListener("click", function() {
+        for(let u = 0; u < menuLink.length; u++)menuLink[u].classList.remove("menu-active");
+        this.classList.add("menu-active");
+    });
+}
+burger();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["2L15i","dV6cC"], "dV6cC", "parcelRequire5d19")
 

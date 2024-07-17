@@ -1,0 +1,70 @@
+$canvas: 1920px;
+$container: 1510px;
+@mixin xsm {
+	@media (max-width: 424.98px) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (max-width: 574.98px) {
+		@content;
+	}
+}
+@mixin m {
+	@media (max-width: 767.98px) {
+		@content;
+	}
+}
+@mixin st {
+	@media (max-width: 959.98px) {
+		@content;
+	}
+}
+@mixin t {
+	@media (max-width: 1023.98px) {
+		@content;
+	}
+}
+@mixin d {
+	@media (max-width: $container) {
+		@content;
+	}
+}
+@mixin focus {
+	@content;
+	&:focus-visible {
+		color: var(--black);
+	}
+}
+/*@mixin active {
+	@content;
+	&:active {
+			color: var(--black);
+	}
+}
+*/
+@mixin container {
+	@content;
+	max-width: calc($container + var(--paddingInline) * 2);
+	margin: 0 auto;
+	padding-inline: var(--paddingInline);
+}
+@mixin hover {
+	&::before {
+		@content;
+		content: "";
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--black);
+		transform: scale(0);
+		transition: transform var(--transition);
+	}
+	&:hover::before {
+		@media (any-hover) {
+			transform: scale(1);
+		}
+	}
+}

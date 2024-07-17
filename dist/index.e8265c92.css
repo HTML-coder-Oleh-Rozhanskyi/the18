@@ -26,7 +26,7 @@ html {
 }
 
 @font-face {
-  font-family: NeueMachina;
+  font-family: Neue Machina;
   font-display: swap;
   src: url("NeueMachina-Regular.837c4fc7.woff2") format("woff2");
   font-weight: 400;
@@ -34,7 +34,7 @@ html {
 }
 
 @font-face {
-  font-family: NeueMachina;
+  font-family: Neue Machina;
   font-display: swap;
   src: url("NeueMachina-Ultrabold.1a660a32.woff2") format("woff2");
   font-weight: 900;
@@ -51,6 +51,18 @@ html {
   --font-family: "Neue Machina", sans-serif;
   --second-family: "Inter", sans-serif;
   --paddingInline: 80px;
+}
+
+@media (width <= 1023.98px) {
+  :root {
+    --paddingInline: 32px;
+  }
+}
+
+@media (width <= 767.98px) {
+  :root {
+    --paddingInline: 16px;
+  }
 }
 
 html {
@@ -93,7 +105,6 @@ html {
 .header {
   z-index: 100;
   transition: background-color var(--transition);
-  text-transform: capitalize;
   width: 100%;
   position: fixed;
   top: 0;
@@ -101,14 +112,198 @@ html {
 }
 
 .header.header--scrolling {
-  background-color: var(--bg-1);
+  background-color: var(--background);
+}
+
+@media (width <= 959.98px) {
+  .header:before {
+    content: "";
+    z-index: 200;
+    background-color: var(--bg-1);
+    transition: transform var(--transition);
+    position: absolute;
+    inset: 0;
+    transform: translate(100%);
+  }
+
+  .menu-active .header:before {
+    transform: translate(0);
+  }
+}
+
+.header__container {
+  max-width: calc(1510px + var(--paddingInline) * 2);
+  padding-inline: var(--paddingInline);
+  --gap: 20px;
+  align-items: center;
+  column-gap: var(--gap);
+  min-height: 110px;
+  margin: 0 auto;
+  display: flex;
+}
+
+@media (width <= 959.98px) {
+  .header__container {
+    justify-content: space-between;
+  }
+}
+
+.header__logo {
+  z-index: 200;
+  position: relative;
+}
+
+.header__img-logo {
+  max-width: 100%;
+  display: block;
+}
+
+.header__menu, .header .menu {
+  flex-grow: 1;
+}
+
+@media (width <= 959.98px) {
+  .header__menu, .header .menu {
+    background-color: var(--bg-1);
+    margin-bottom: 30px;
+    padding: 150px 0 30px;
+    transition: transform .4s linear;
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    transform: translateX(100%);
+  }
+
+  .header__menu.menu-active, .header .menu.menu-active {
+    transform: translateX(0);
+  }
+}
+
+.header__menu__list, .header .menu__list {
+  align-items: center;
+  column-gap: var(--gap);
+  margin-block: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+}
+
+@media (width <= 959.98px) {
+  .header__menu__list, .header .menu__list {
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: var(--gap);
+    flex-flow: column;
+    margin-bottom: 30px;
+  }
+}
+
+.header__menu__link, .header .menu__link {
+  color: inherit;
+  white-space: nowrap;
+  padding-inline: 20px;
+  line-height: 52px;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.header__menu__link:before, .header .menu__link:before {
+  content: "";
+  background-color: var(--black);
+  transition: transform var(--transition);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transform: scale(0);
+}
+
+@media (any-hover) {
+  .header__menu__link:hover:before, .header .menu__link:hover:before {
+    transform: scale(1);
+  }
+}
+
+@media (width <= 959.98px) {
+  .header__menu__link, .header .menu__link {
+    font-size: 24px;
+  }
+}
+
+.button-block {
+  z-index: 200;
+  align-items: center;
+  column-gap: var(--gap);
+  display: flex;
+  position: relative;
+}
+
+.button-block--menu {
+  z-index: 200;
+  display: none;
+  position: relative;
+}
+
+@media (width <= 574.98px) {
+  .button-block--menu {
+    justify-content: center;
+    display: flex;
+  }
+}
+
+.button-block__button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background-color var(--transition), color var(--transition);
+  border: none;
+  min-height: 52px;
+  padding-inline: 20px;
+}
+
+@media (width <= 574.98px) {
+  .button-block__button {
+    display: none;
+  }
+}
+
+.button-block__button--white {
+  background-color: var(--white);
+}
+
+@media (any-hover) {
+  .button-block__button--white:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
+.button-block__button--black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+@media (any-hover) {
+  .button-block__button--black:hover {
+    background-color: var(--white);
+    color: var(--block);
+  }
+}
+
+@media (width <= 574.98px) {
+  .button-block__button--menu {
+    font-size: 24px;
+    display: block;
+  }
 }
 
 .burger-btn {
   display: none;
 }
 
-@media (width <= 574.98px) {
+@media (width <= 959.98px) {
   .burger-btn {
     z-index: 200;
     background-color: #0000;
@@ -120,16 +315,16 @@ html {
   }
 }
 
-@media (width <= 574.98px) and (any-hover) {
+@media (width <= 959.98px) and (any-hover) {
   .burger-btn:hover {
     cursor: pointer;
   }
 }
 
-@media (width <= 574.98px) {
+@media (width <= 959.98px) {
   .burger-btn span, .burger-btn:before, .burger-btn:after {
     content: "";
-    background-color: var(--brand-1);
+    background-color: var(--black);
     width: 100%;
     height: 2px;
     transition: all .3s;
