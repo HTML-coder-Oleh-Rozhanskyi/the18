@@ -585,8 +585,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"dV6cC":[function(require,module,exports) {
 var _menuBurgerJs = require("./components/menu_burger.js");
+var _headerJs = require("./components/header.js");
 
-},{"./components/menu_burger.js":"kg4Ds"}],"kg4Ds":[function(require,module,exports) {
+},{"./components/menu_burger.js":"kg4Ds","./components/header.js":"iODzc"}],"kg4Ds":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "burger", ()=>burger);
@@ -653,6 +654,28 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["2L15i","dV6cC"], "dV6cC", "parcelRequire5d19")
+},{}],"iODzc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "header", ()=>header);
+function header() {
+    const header = document.querySelector(".header");
+    window.addEventListener("scroll", ()=>{
+        let scrollDistance = window.scrollY;
+        if (scrollDistance > 59) header.classList.add("header--scrolling");
+        else header.classList.remove("header--scrolling");
+        document.querySelectorAll(".section").forEach((el, i)=>{
+            if (el.offsetTop - document.querySelector(".header").clientHeight <= scrollDistance) {
+                document.querySelectorAll(".menu__link").forEach((el)=>{
+                    if (el.classList.contains("menu-active")) el.classList.remove("menu-active");
+                });
+                document.querySelectorAll(".menu__item")[i].querySelector(".menu__link").classList.add("menu-active");
+            }
+        });
+    });
+}
+header();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["2L15i","dV6cC"], "dV6cC", "parcelRequire5d19")
 
 //# sourceMappingURL=index.e82f28a0.js.map

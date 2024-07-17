@@ -16,16 +16,8 @@ html {
 @mixin svg {
 	display: block;
 	max-width: 100%;
-	*[fill] {
-		fill: currentColor;
-	}
-	*[stroke] {
-		stroke: currentColor;
-	}
-	* {
-		transition-property: fill, stroke;
-	}
 }
+
 @mixin list {
 	@content;
 	margin-block: 0;
@@ -45,9 +37,6 @@ html {
 @mixin p {
 	@content;
 	margin-block: 0;
-	&:not(:last-child) {
-		margin-bottom: 24px;
-	}
 }
 @mixin link {
 	@content;
@@ -111,5 +100,13 @@ button {
 }
 */
 /*
-
+svg *[fill] {
+	fill: currentColor;
+}
+svg *[stroke] {
+	stroke: currentColor;
+}
+svg * {
+	transition-property: fill, stroke;
+}
 */
