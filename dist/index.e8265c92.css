@@ -373,7 +373,6 @@ html {
 }
 
 .banner__container {
-  z-index: 100;
   max-width: calc(1510px + var(--paddingInline) * 2);
   padding-inline: var(--paddingInline);
   background-image: url("1.cf2620a0.svg");
@@ -382,7 +381,6 @@ html {
   margin: 0 auto;
   padding-top: 40px;
   padding-bottom: 100px;
-  position: relative;
 }
 
 @media (width <= 1270px) {
@@ -394,6 +392,7 @@ html {
 @media (width <= 1023.98px) {
   .banner__container {
     background-image: none;
+    padding-top: 0;
   }
 }
 
@@ -449,10 +448,11 @@ html {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  padding: 0;
   border: 0;
   width: 50%;
   min-height: 52px;
-  padding: 0 0 0 16px;
+  padding-inline: 16px;
 }
 
 @media (width <= 574.98px) {
@@ -467,6 +467,7 @@ html {
   font-size: inherit;
   background-color: var(--black);
   white-space: nowrap;
+  transition: background-color var(--transition), color var(--transition);
   border: none;
   min-height: 52px;
   padding: 0 20px;

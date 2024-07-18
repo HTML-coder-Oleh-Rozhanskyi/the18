@@ -6,8 +6,6 @@
 .banner {
 	// .banner__container
 	&__container {
-		position: relative;
-		z-index: 100;
 		@include container;
 		background-image: url(../img/banner/1.svg);
 		background-repeat: no-repeat;
@@ -19,6 +17,7 @@
 		}
 		@include t {
 			background-image: none;
+			padding-top: 0;
 		}
 	}
 	// .banner__text-block
@@ -61,7 +60,7 @@
 	&__input {
 		@include input;
 		min-height: 52px;
-		padding-left: 16px;
+		padding-inline: 16px;
 		width: 50%;
 		@include sm {
 			width: 60%;
@@ -76,6 +75,9 @@
 		background-color: var(--black);
 		color: var(--white);
 		white-space: nowrap;
+		transition:
+			background-color var(--transition),
+			color var(--transition);
 		&:hover {
 			@media (any-hover) {
 				background-color: var(--white);
@@ -91,8 +93,5 @@
 		@include t {
 			justify-content: center;
 		}
-	}
-	// .banner__svg
-	&__svg {
 	}
 }
