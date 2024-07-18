@@ -391,9 +391,15 @@ html {
 .subtitle {
   letter-spacing: -.05em;
   margin-block: 0;
-  font-size: 60px;
+  font-size: clamp(44px, 5.85949vw, 60px);
   font-weight: 400;
   line-height: 1.1;
+}
+
+@media (width <= 767.98px) {
+  .subtitle {
+    letter-spacing: -.09em;
+  }
 }
 
 .banner__container {
@@ -598,5 +604,11 @@ html {
 
 .about-us__item:not(:last-child) {
   margin-bottom: 24px;
+}
+
+@media (width <= 767.98px) {
+  .about-us__item {
+    padding-left: 36px;
+  }
 }
 /*# sourceMappingURL=index.e8265c92.css.map */

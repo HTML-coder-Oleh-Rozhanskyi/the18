@@ -186,5 +186,8 @@
 		&:not(:last-child) {
 			margin-bottom: 24px;
 		}
+		@include m {
+			padding-left: 36px;
+		}
 	}
 }
