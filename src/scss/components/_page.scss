@@ -1,8 +1,32 @@
 .main {
 	padding-top: clamp(110px, vwt(200px), 200px);
-	&__banner {
+	&__about-us {
+		padding-block: 100px;
 	}
 }
+
+.title {
+	@include title;
+	display: inline-block;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 1.86;
+	text-transform: uppercase;
+	padding: 6px 20px;
+	margin-bottom: 35px;
+	border: 1px solid #000;
+}
+.subtitle {
+	@include title;
+	font-weight: 400;
+	font-size: clamp(44px, vwt(60px), 60px);
+	line-height: 1.1;
+	letter-spacing: -0.05em;
+	@include m {
+		letter-spacing: -0.09em;
+	}
+}
+
 .banner {
 	// .banner__container
 	&__container {
@@ -24,7 +48,7 @@
 	&__text-block {
 		max-width: 721px;
 		@media (max-width: 1270px) {
-			max-width: clamp(619px, calc(721px / 1270px * 100vw), 721px);
+			max-width: clamp(619px, 55.77vw, 721px);
 		}
 		@include t {
 			max-width: 100%;
@@ -39,6 +63,9 @@
 		text-transform: capitalize;
 		letter-spacing: -0.06em;
 		margin-bottom: 20px;
+		@include m {
+			letter-spacing: -0.08em;
+		}
 	}
 	// .banner__text
 	&__text {
@@ -92,6 +119,72 @@
 		align-items: center;
 		@include t {
 			justify-content: center;
+		}
+	}
+}
+
+.about-us {
+	// .about-us__container
+	&__container {
+		@include container;
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+		@include t {
+			flex-direction: column-reverse;
+		}
+	}
+	// .about-us__img-block
+	&__img-block {
+		@include d {
+			margin-left: -80px;
+		}
+		@include t {
+			align-self: center;
+			margin-left: 0;
+			max-width: 100%;
+		}
+	}
+	// .about-us__img
+	&__img {
+		@include img;
+		height: auto;
+	}
+	// .about-us__text-block
+	&__text-block {
+		max-width: 750px;
+		@media (max-width: 1439px) {
+			max-width: clamp(529px, 52.11vw, 750px);
+		}
+		@include t {
+			max-width: 100%;
+		}
+	}
+	// .about-us__title
+	&__title {
+	}
+	// .about-us__subtitile
+	&__subtitile {
+		margin-bottom: 20px;
+	}
+	// .about-us__text
+	&__text {
+		@include p;
+		margin-bottom: 60px;
+	}
+	// .about-us__list
+	&__list {
+		@include list;
+	}
+	// .about-us__item
+	&__item {
+		padding-left: 48px;
+		background-image: url(../img/icon/square.svg);
+		background-size: 10px;
+		background-position: 0 6px;
+		background-repeat: no-repeat;
+		&:not(:last-child) {
+			margin-bottom: 24px;
 		}
 	}
 }

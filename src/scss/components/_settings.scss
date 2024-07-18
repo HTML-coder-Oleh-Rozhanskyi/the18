@@ -8,7 +8,7 @@
 	--font-family: "Neue Machina", sans-serif;
 	--second-family: "Inter", sans-serif;
 	--paddingInline: 80px;
-	@include t {
+	@media (max-width:1439px) {
 		--paddingInline: 32px;
 	}
 	@include m {
