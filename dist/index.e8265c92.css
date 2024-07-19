@@ -372,7 +372,7 @@ html {
   padding-top: clamp(110px, 19.5316vw, 200px);
 }
 
-.main__about-us, .main__collaboration {
+.main__about-us, .main__collaboration, .main__pricing {
   padding-block: clamp(40px, 9.76582vw, 100px);
 }
 
@@ -693,7 +693,7 @@ html {
 }
 
 .collaboration__img-block {
-  grid-area: 1 / 2 / 3 / 3;
+  grid-area: 1 / 2 / 4 / 3;
 }
 
 @media (width <= 1439.98px) {
@@ -798,5 +798,210 @@ html {
   .collaboration__text-list {
     grid-area: 3 / 1 / 4 / 2;
   }
+}
+
+.pricing__container {
+  max-width: calc(1510px + var(--paddingInline) * 2);
+  padding-inline: var(--paddingInline);
+  margin: 0 auto;
+}
+
+.pricing__top {
+  grid-template-columns: clamp(380px, 32.63vw, 470px) clamp(380px, 51.59vw, 743px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  display: grid;
+}
+
+@media (width <= 1023.98px) {
+  .pricing__top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 1439.98px) {
+  .pricing__img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (width <= 1023.98px) {
+  .pricing__img {
+    grid-row: 2 / 3;
+    justify-self: center;
+  }
+}
+
+.pricing__text-block {
+  flex-direction: column;
+  align-items: flex-end;
+  display: flex;
+}
+
+.pricing__subtitle {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.pricing__text {
+  text-align: right;
+  margin-block: 0;
+}
+
+.pricing__list {
+  grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+  justify-content: space-between;
+  gap: 24px;
+  margin-block: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+}
+
+@media (width <= 767.98px) {
+  .pricing__list {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.pricing__item-list {
+  justify-content: center;
+  padding: 40px;
+  display: flex;
+}
+
+.pricing__item-list:first-child {
+  border: 1px solid var(--black);
+}
+
+.pricing__item-list:nth-child(2n) {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.pricing__item-list:last-child {
+  background-color: #fff;
+}
+
+@media (width <= 1439.98px) {
+  .pricing__item-list {
+    padding: 20px;
+  }
+}
+
+@media (width <= 767.98px) {
+  .pricing__item-list {
+    max-width: 60%;
+  }
+}
+
+@media (width <= 574.98px) {
+  .pricing__item-list {
+    max-width: 80%;
+  }
+}
+
+@media (width <= 424.98px) {
+  .pricing__item-list {
+    max-width: 100%;
+  }
+}
+
+.pricing__card, .pricing .card-pricing {
+  flex-direction: column;
+  display: flex;
+}
+
+.pricing__card__title, .pricing .card-pricing__title {
+  text-transform: lowercase;
+  margin-block: 0;
+  align-items: end;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+}
+
+.pricing__card__title:before, .pricing .card-pricing__title:before {
+  content: "$";
+  align-self: start;
+  width: 16px;
+  height: 28px;
+}
+
+.pricing__card__span-title, .pricing .card-pricing__span-title {
+  letter-spacing: -.05em;
+  margin-right: 12px;
+  font-size: 80px;
+  font-weight: 800;
+}
+
+.pricing__card__text, .pricing .card-pricing__text {
+  margin-bottom: 60px;
+  display: block;
+}
+
+@media (width <= 1439.98px) {
+  .pricing__card__text, .pricing .card-pricing__text {
+    margin-bottom: 40px;
+  }
+}
+
+.pricing__card__list, .pricing .card-pricing__list {
+  margin-block: 0;
+  flex-grow: 1;
+  margin-bottom: 80px;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (width <= 1439.98px) {
+  .pricing__card__list, .pricing .card-pricing__list {
+    margin-bottom: 40px;
+  }
+}
+
+.pricing__card__item-list, .pricing .card-pricing__item-list {
+  background-image: url("square.991d62fb.svg");
+  background-position: 0 6px;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  padding-left: 40px;
+}
+
+.pricing__card__item-list--white-square, .pricing .card-pricing__item-list--white-square {
+  background-image: url("square-white.b164030d.svg");
+}
+
+@media (width <= 1439.98px) {
+  .pricing__card__item-list, .pricing .card-pricing__item-list {
+    padding-left: 30px;
+  }
+}
+
+.pricing__card__item-list:not(:last-child), .pricing .card-pricing__item-list:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.pricing__card__button, .pricing .card-pricing__button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  min-height: 52px;
+}
+
+.pricing__card__button--black, .pricing .card-pricing__button--black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.pricing__card__button--white, .pricing .card-pricing__button--white {
+  background-color: var(--white);
+  color: var(--black);
 }
 /*# sourceMappingURL=index.e8265c92.css.map */
