@@ -25,6 +25,11 @@ $container: 1510px;
 		@content;
 	}
 }
+@mixin bt {
+	@media (max-width: 1439.98px) {
+		@content;
+	}
+}
 @mixin d {
 	@media (max-width: $container) {
 		@content;
