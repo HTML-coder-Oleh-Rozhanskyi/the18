@@ -55,8 +55,8 @@ $container: 1510px;
 	padding-inline: var(--paddingInline);
 }
 @mixin hover {
+	@content;
 	&::before {
-		@content;
 		content: "";
 		position: absolute;
 		bottom: -5px;

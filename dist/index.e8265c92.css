@@ -208,8 +208,8 @@ html {
 }
 
 .menu__link {
-  color: inherit;
   white-space: nowrap;
+  color: inherit;
   padding-inline: 20px;
   line-height: 52px;
   text-decoration: none;
