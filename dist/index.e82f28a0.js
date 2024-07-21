@@ -586,8 +586,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"dV6cC":[function(require,module,exports) {
 var _menuBurgerJs = require("./components/menu_burger.js");
 var _headerJs = require("./components/header.js");
+var _accordionJs = require("./components/accordion.js");
 
-},{"./components/menu_burger.js":"kg4Ds","./components/header.js":"iODzc"}],"kg4Ds":[function(require,module,exports) {
+},{"./components/menu_burger.js":"kg4Ds","./components/header.js":"iODzc","./components/accordion.js":"aE6en"}],"kg4Ds":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "burger", ()=>burger);
@@ -675,6 +676,34 @@ function header() {
     });
 }
 header();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aE6en":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "accordion", ()=>accordion);
+function accordion() {
+    document.addEventListener("DOMContentLoaded", ()=>{
+        const accordion = document.querySelectorAll(".accordion");
+        accordion.forEach((el)=>{
+            el.addEventListener("click", (e)=>{
+                const self = e.currentTarget;
+                const control = self.querySelector(".accordion__btn");
+                const content = self.querySelector(".accordion__content");
+                self.classList.toggle("accordion--active");
+                if (self.classList.contains("accordion--active")) {
+                    control.setAttribute("aria-expanded", true);
+                    content.setAttribute("aria-hidden", false);
+                    content.style.maxHeight = content.scrollHeight * 1.8 + "px";
+                } else {
+                    control.setAttribute("aria-expanded", false);
+                    content.setAttribute("aria-hidden", true);
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    });
+}
+accordion();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["2L15i","dV6cC"], "dV6cC", "parcelRequire5d19")
 

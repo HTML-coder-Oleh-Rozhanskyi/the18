@@ -50,49 +50,48 @@
 	&__img-logo {
 		@include img;
 	}
-	// .header__menu
-	&__menu,
-	.menu {
-		flex-grow: 1;
+}
+// .header__menu
+.menu {
+	flex-grow: 1;
+	@include st {
+		overflow-y: auto;
+		position: fixed;
+		inset: 0;
+		padding: 150px 0 30px;
+		transform: translateX(100%);
+		transition: transform 0.4s linear;
+		background-color: var(--bg-1);
+		&.menu-active {
+			transform: translateX(0);
+		}
+	}
+	// .menu__list
+	&__list {
+		@include list;
+		display: flex;
+		align-items: center;
+		column-gap: var(--gap);
 		@include st {
-			overflow-y: auto;
-			position: fixed;
-			inset: 0;
-			padding: 150px 0 30px;
-			transform: translateX(100%);
-			transition: transform 0.4s linear;
-			background-color: var(--bg-1);
-			&.menu-active {
-				transform: translateX(0);
-			}
-		}
-		// .menu__list
-		&__list {
-			@include list;
-			display: flex;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
 			align-items: center;
-			column-gap: var(--gap);
-			@include st {
-				flex-wrap: nowrap;
-				justify-content: flex-start;
-				align-items: center;
-				flex-direction: column;
-				row-gap: var(--gap);
-				margin-bottom: 30px;
-			}
+			flex-direction: column;
+			row-gap: var(--gap);
+			margin-bottom: 30px;
 		}
-		// .menu__link
-		&__link {
-			@include link;
-			@include hover;
-			display: inline-block;
-			position: relative;
-			white-space: nowrap;
-			line-height: 52px;
-			padding-inline: 20px;
-			@include st {
-				font-size: 24px;
-			}
+	}
+	// .menu__link
+	&__link {
+		@include link;
+		@include hover;
+		display: block;
+		position: relative;
+		white-space: nowrap;
+		line-height: 52px;
+		padding-inline: 20px;
+		@include st {
+			font-size: 24px;
 		}
 	}
 }
