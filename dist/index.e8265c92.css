@@ -210,10 +210,10 @@ html {
 .menu__link {
   white-space: nowrap;
   color: inherit;
-  padding-inline: 20px;
-  line-height: 52px;
+  padding: 17px 20px;
+  line-height: 1;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   position: relative;
 }
 
@@ -221,17 +221,17 @@ html {
   content: "";
   background-color: var(--black);
   transition: transform var(--transition);
-  width: 100%;
+  width: calc(100% - 40px);
   height: 2px;
   position: absolute;
-  bottom: -5px;
-  left: 0;
-  transform: scale(0);
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%)scale(0);
 }
 
 @media (any-hover) {
   .menu__link:hover:before {
-    transform: scale(1);
+    transform: translateX(-50%)scale(1);
   }
 }
 

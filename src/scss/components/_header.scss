@@ -83,11 +83,11 @@
 	}
 	// .menu__link
 	&__link {
-		padding-inline: 20px;
-		line-height: 52px;
-		white-space: nowrap;
 		position: relative;
-		display: block;
+		display: inline-block;
+		padding: 17px 20px;
+		line-height: 1;
+		white-space: nowrap;
 		@include link;
 		@include hover;
 		@include st {
