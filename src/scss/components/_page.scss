@@ -34,28 +34,43 @@
 .banner {
 	// .banner__container
 	&__container {
+		position: relative;
 		@include container;
-		background-image: url(../img/banner/1.svg);
-		background-repeat: no-repeat;
-		background-position: calc(100% - 80px) 0;
-		padding-top: 40px;
+		// background-image: url(../img/banner/1.svg);
+		// background-repeat: no-repeat;
+		// background-position: calc(100% - 80px) 0;
 		padding-bottom: clamp(40px, vwt(100px), 100px);
 		@media (max-width: 1270px) {
-			background-position: calc(100% + 60px) 50%;
+			// background-position: calc(100% + 60px) 50%;
 		}
 		@include t {
 			background-image: none;
 			padding-top: 0;
 		}
 	}
+	// .banner__img
+	&__img {
+		position: absolute;
+		top: 0;
+		right: 80px;
+		z-index: -1;
+		@media (max-width: 1270px) {
+			right: -20px;
+		}
+		@include t {
+			display: none;
+		}
+	}
 	// .banner__text-block
 	&__text-block {
 		max-width: 721px;
+		padding-top: 40px;
 		@media (max-width: 1270px) {
 			max-width: clamp(619px, 55.77vw, 721px);
 		}
 		@include t {
 			max-width: 100%;
+			padding-top: 0;
 		}
 	}
 	// .banner__title
