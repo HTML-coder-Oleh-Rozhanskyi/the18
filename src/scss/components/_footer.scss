@@ -1,1 +1,266 @@
+.footer {
+	background-color: var(--black);
+	padding-block: 32px;
+	// .footer__container
+	&__container {
+		color: var(--white);
+		display: grid;
+		grid-template-columns: 484px 700px;
+		justify-content: space-between;
+		column-gap: 75px;
+		row-gap: 155px;
+		@include container;
+		@include bt {
+			grid-template-columns: 484px 1fr;
+			align-items: start;
+		}
+		@include t {
+			grid-template-columns: 1fr;
+			row-gap: 60px;
+		}
+	}
+	// .footer__left-side
+	&__left-side {
+		grid-column: 1/2;
+		grid-row: 1/2;
+		display: grid;
+		@include t {
+			max-width: 100%;
+		}
+		@include m {
+			justify-items: center;
+		}
+	}
+	// .footer__logo
+	&__logo {
+		@include img;
+		margin-bottom: 40px;
+	}
+	// .footer__title
+	&__title {
+		@include title;
+		font-size: clamp(32px, vwm(52px), 52px);
+		font-weight: 400;
+		line-height: 1.15;
+		letter-spacing: -0.08em;
+		margin-bottom: 32px;
+		@include m {
+			text-align: center;
+			line-height: 1.25;
+			letter-spacing: -0.03em;
+			margin-bottom: 20px;
+		}
+	}
+	// .footer__form
+	&__form {
+		display: flex;
+		@include t {
+			width: 70%;
+			align-self: start;
+			justify-self: center;
+		}
+		@include sm {
+			width: 100%;
+		}
+		@include xsm {
+			flex-direction: column;
+			row-gap: 20px;
+		}
+	}
+	// .footer__input
+	&__input {
+		@include input;
+		min-height: 52px;
+		padding-inline: 16px;
+		color: var(--black);
+		width: 100%;
+	}
+	// .footer__button
+	&__button {
+		min-height: 52px;
+		padding: 0 20px;
+		border: 1px solid var(--white);
+		background-color: var(--black);
+		color: var(--white);
+		white-space: nowrap;
+		transition:
+			background-color var(--transition),
+			color var(--transition);
+		&:hover {
+			@media (any-hover) {
+				background-color: var(--white);
+				color: var(--black);
+			}
+		}
+		@include button;
+	}
+	// .footer__right-side
+	&__right-side {
+		grid-column: 2/3;
+		grid-row: 1/2;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-content: space-between;
+		column-gap: 100px;
+		row-gap: 60px;
+		@include bt {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 75px;
+		}
+		@include t {
+			grid-column: 1/2;
+			grid-row: 2/3;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include m {
+			width: 70%;
+			margin: 0 auto;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include sm {
+			width: 100%;
+			grid-template-columns: 1fr;
+			justify-content: center;
+		}
+	}
+	&__list-email,
+	&__list-info,
+	&__list-menu {
+		display: flex;
+		flex-direction: column;
+		row-gap: 24px;
+		@include list;
+		@include sm {
+			align-items: center;
+		}
+	}
+	// .footer__list-email
+	&__list-email {
+		@include bt {
+			grid-column: 2/3;
+			grid-row: 2/3;
+		}
+		@include t {
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
+		@include m {
+			grid-column: 1/3;
+			grid-row: 2/3;
+			justify-self: center;
+		}
+		@include sm {
+			grid-column: 1/2;
+			grid-row: 3/4;
+		}
+	}
+	// .footer__item-list-email
+	&__item-list-email {
+		&:first-child {
+			font-weight: 800;
+			font-size: 20px;
+		}
+	}
+	// .footer__link-list-email
+	&__link-list-email,
+	&__link-list-menu,
+	&__link-list-info {
+		display: inline-block;
+		position: relative;
+		white-space: nowrap;
+		@include link;
+		@include hover-footer;
+		@include sm {
+			display: block;
+			text-align: center;
+		}
+	}
+	// .footer__menu
+	&__menu {
+		@include bt {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			justify-self: end;
+		}
+		@include t {
+			grid-column: 2/3;
+			justify-self: start;
+		}
+		@include m {
+			grid-column: 1/2;
+		}
+		@include sm {
+			justify-self: center;
+		}
+	}
 
+	// .footer__list-info
+	&__list-info {
+		@include bt {
+			grid-column: 2/3;
+			grid-row: 1/2;
+		}
+		@include t {
+			grid-column: 3/4;
+		}
+		@include m {
+			grid-column: 2/3;
+		}
+		@include sm {
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+	}
+
+	// .footer__list-social
+	&__list-social {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		justify-self: end;
+		display: flex;
+		align-items: flex-end;
+		column-gap: 20px;
+		@include list;
+		@include bt {
+			grid-column: 1/3;
+		}
+		@include t {
+			grid-column: 1/2;
+			grid-row: 3/4;
+			justify-self: center;
+		}
+		@include m {
+			column-gap: 10px;
+		}
+	}
+	// .footer__link-list-social
+	&__link-list-social {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		@include link;
+	}
+	// .footer__img-list-social
+	&__img-list-social {
+		display: inline-block;
+		max-width: 100%;
+		&:hover {
+			@media (any-hover) {
+				color: var(--bg-1);
+			}
+		}
+	}
+	// .footer__copypasta
+	&__copypasta {
+		grid-column: 1/2;
+		grid-row: 2/3;
+		align-self: center;
+		@include t {
+			grid-column: 1/2;
+			grid-row: 4/5;
+			justify-self: center;
+		}
+	}
+}

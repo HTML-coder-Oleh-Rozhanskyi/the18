@@ -9,47 +9,48 @@ html {
 	box-sizing: inherit;
 }
 @mixin img {
-	@content;
 	display: block;
 	max-width: 100%;
+	@content;
 }
 @mixin svg {
 	display: block;
 	max-width: 100%;
+	@content;
 }
 
 @mixin list {
-	@content;
 	margin-block: 0;
 	padding-left: 0;
 	list-style: none;
+	@content;
 }
 @mixin button {
-	@content;
 	font-family: inherit;
 	color: inherit;
 	font-size: inherit;
+	@content;
 }
 @mixin title {
-	@content;
 	margin-block: 0;
+	@content;
 }
 @mixin p {
-	@content;
 	margin-block: 0;
+	@content;
 }
 @mixin link {
-	@content;
 	color: inherit;
 	text-decoration: none;
+	@content;
 }
 @mixin input {
-	@content;
 	font-family: inherit;
 	color: inherit;
 	font-size: inherit;
 	padding: 0;
 	border: 0;
+	@content;
 }
 @media (prefers-reduced-motion: reduce) {
 	* {
@@ -99,14 +100,13 @@ button {
 	font-family: inherit;
 }
 */
-/*
-svg *[fill] {
-	fill: currentColor;
-}
-svg *[stroke] {
-	stroke: currentColor;
-}
-svg * {
-	transition-property: fill, stroke;
-}
-*/
+
+// svg *[fill] {
+// 	fill: currentColor;
+// }
+// svg *[stroke] {
+// 	stroke: currentColor;
+// }
+// svg * {
+// 	transition-property: fill, stroke;
+// }
