@@ -27,8 +27,9 @@ html {
 }
 @mixin button {
 	font-family: inherit;
-	color: inherit;
 	font-size: inherit;
+	color: inherit;
+	border: none;
 	@content;
 }
 @mixin title {

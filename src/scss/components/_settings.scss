@@ -6,9 +6,8 @@
 	--transition: 0.3s;
 	--transition-long: 1s;
 	--font-family: "Neue Machina", sans-serif;
-	--second-family: "Inter", sans-serif;
 	--paddingInline: 80px;
-	@media (max-width:1439px) {
+	@media (max-width: 1439px) {
 		--paddingInline: 32px;
 	}
 	@include m {
