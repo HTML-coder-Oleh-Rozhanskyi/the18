@@ -69,14 +69,16 @@
 	}
 	// .footer__input
 	&__input {
-		@include input;
 		min-height: 52px;
 		padding-inline: 16px;
+		border: none;
 		color: var(--black);
 		width: 100%;
+		@include input;
 	}
 	// .footer__button
 	&__button {
+		@include button;
 		min-height: 52px;
 		padding: 0 20px;
 		border: 1px solid var(--white);
@@ -86,7 +88,7 @@
 		transition:
 			background-color var(--transition),
 			color var(--transition);
-		@include button;
+
 		&:hover {
 			@media (any-hover) {
 				background-color: var(--white);

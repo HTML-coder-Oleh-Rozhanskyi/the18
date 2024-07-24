@@ -108,6 +108,7 @@
 		@include input;
 		min-height: 52px;
 		padding-inline: 16px;
+		border: none;
 		width: 50%;
 		@include sm {
 			width: 60%;
@@ -128,10 +129,11 @@
 		transition:
 			background-color var(--transition),
 			color var(--transition);
+
 		&:hover {
 			@media (any-hover) {
 				background-color: var(--white);
-				color: var(--block);
+				color: var(--black);
 			}
 		}
 	}

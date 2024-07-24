@@ -29,7 +29,6 @@ html {
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
-	border: none;
 	@content;
 }
 @mixin title {
@@ -49,8 +48,6 @@ html {
 	font-family: inherit;
 	color: inherit;
 	font-size: inherit;
-	padding: 0;
-	border: 0;
 	@content;
 }
 @media (prefers-reduced-motion: reduce) {
