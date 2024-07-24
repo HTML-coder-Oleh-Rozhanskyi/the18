@@ -88,6 +88,8 @@
 		padding: 17px 20px;
 		line-height: 1;
 		white-space: nowrap;
+		@include link;
+		@include hover;
 		&.menu-active {
 			&::before {
 				content: "";
@@ -101,8 +103,7 @@
 				transition: transform var(--transition);
 			}
 		}
-		@include link;
-		@include hover;
+
 		@include st {
 			font-size: 24px;
 		}

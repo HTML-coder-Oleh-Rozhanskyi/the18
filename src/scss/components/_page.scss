@@ -268,9 +268,10 @@
 		margin-bottom: 60px;
 	}
 	// .collaboration__img-block
-	&__img-block {
+	&__img {
 		grid-column: 2/3;
 		grid-row: 1/4;
+		max-width: 100%;
 		@include bt {
 			margin-right: -60px;
 		}
