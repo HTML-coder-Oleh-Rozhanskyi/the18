@@ -524,11 +524,26 @@
 	&__button--black {
 		background-color: var(--black);
 		color: var(--white);
+		transition:
+			background-color var(--transition),
+			color var(--transition);
+		&:hover {
+			@media (any-hover) {
+				background-color: var(--white);
+				color: var(--black);
+			}
+		}
 	}
 	// .card-pricing__button--white
 	&__button--white {
 		background-color: var(--white);
 		color: var(--black);
+		&:hover {
+			@media (any-hover) {
+				background-color: var(--black);
+				color: var(--white);
+			}
+		}
 	}
 }
 
