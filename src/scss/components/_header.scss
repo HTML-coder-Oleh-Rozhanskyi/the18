@@ -88,6 +88,19 @@
 		padding: 17px 20px;
 		line-height: 1;
 		white-space: nowrap;
+		&.menu-active {
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				width: calc(100% - 40px);
+				height: 2px;
+				background-color: var(--black);
+				transform: translateX(-50%) scale(1);
+				transition: transform var(--transition);
+			}
+		}
 		@include link;
 		@include hover;
 		@include st {
