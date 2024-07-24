@@ -517,20 +517,20 @@
 	// .card-pricing__button
 	&__button {
 		@include button;
+		border: 1px solid transparent;
 		width: 100%;
 		min-height: 52px;
+		transition: all var(--transition);
 	}
 	// .card-pricing__button--black
 	&__button--black {
 		background-color: var(--black);
 		color: var(--white);
-		transition:
-			background-color var(--transition),
-			color var(--transition);
 		&:hover {
 			@media (any-hover) {
 				background-color: var(--white);
 				color: var(--black);
+				border: 1px solid var(--black);
 			}
 		}
 	}
@@ -542,6 +542,7 @@
 			@media (any-hover) {
 				background-color: var(--black);
 				color: var(--white);
+				border: 1px solid var(--white);
 			}
 		}
 	}
