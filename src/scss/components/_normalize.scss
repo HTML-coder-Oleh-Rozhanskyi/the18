@@ -40,8 +40,8 @@ html {
 	@content;
 }
 @mixin link {
-	color: inherit;
 	text-decoration: none;
+	color: inherit;
 	@content;
 }
 @mixin input {

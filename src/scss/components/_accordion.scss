@@ -36,10 +36,12 @@
 		max-height: 0;
 		opacity: 0;
 		overflow: hidden;
+		padding-bottom: 0;
 		will-change: max-height;
 		transition: all var(--transition);
 		.accordion--active & {
 			opacity: 1;
+			padding-bottom: 20px;
 		}
 	}
 	// .accordion__text
