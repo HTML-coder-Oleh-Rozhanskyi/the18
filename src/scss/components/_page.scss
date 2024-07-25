@@ -109,6 +109,7 @@
 		min-height: 52px;
 		padding-inline: 16px;
 		border: none;
+		border-radius: 0;
 		width: 50%;
 		@include sm {
 			width: 60%;
@@ -370,6 +371,9 @@
 	// .pricing__container
 	&__container {
 		@include container;
+		@include m {
+			display: grid;
+		}
 	}
 	// .pricing__top
 	&__top {
@@ -399,27 +403,36 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		@include t {
+			align-items: flex-start;
+		}
 	}
 	// .pricing__subtitle
 	&__subtitle {
 		text-align: right;
 		margin-bottom: 20px;
+		@include t {
+			text-align: left;
+		}
 	}
 	// .pricing__text
 	&__text {
-		@include p;
 		text-align: right;
+		@include p;
+		@include t {
+			text-align: left;
+		}
 	}
 	// .pricing__list
 	&__list {
-		@include list;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
 		gap: 24px;
 		justify-content: space-between;
+		@include list;
 		@include m {
 			grid-template-columns: 1fr;
-			justify-items: center;
+			justify-self: center;
 		}
 	}
 	// .pricing__item-list
@@ -439,15 +452,6 @@
 		}
 		@include bt {
 			padding: 20px;
-		}
-		@include m {
-			max-width: 60%;
-		}
-		@include sm {
-			max-width: 80%;
-		}
-		@include xsm {
-			max-width: 100%;
 		}
 	}
 }
