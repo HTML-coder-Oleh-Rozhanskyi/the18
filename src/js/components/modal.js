@@ -4,6 +4,8 @@ export function modal() {
 	const modalsItem = document.querySelectorAll('.modals__item');
 	const body = document.querySelector('.body');
 	const modalButton = document.querySelector('.modals-btn')
+	const menuWrap = document.querySelector('.menu');
+	const menuBtn = document.querySelector('.burger-btn');
 
 	btns.forEach((el) => {
 		el.addEventListener('click', (e) => {
@@ -14,10 +16,11 @@ export function modal() {
 				el.classList.remove('modals__item--visible');
 			});
 
-
-
 			document.querySelector(`[data-target="${path}"]`).classList.add('modals__item--visible');
 			modalOverlay.classList.add('modals__overlay--visible');
+
+			menuWrap.classList.remove('menu-active');
+			menuBtn.classList.remove('menu-active');
 		});
 	});
 
