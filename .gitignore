@@ -4,5 +4,7 @@ package.json
 package-lock.json
 sharp.config.json
 project_info
-build
+serve
 .parcelrc
+.parcel-cache
+--no-source-maps

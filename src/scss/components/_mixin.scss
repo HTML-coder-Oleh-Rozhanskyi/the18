@@ -36,10 +36,10 @@ $container: 1510px;
 	}
 }
 @mixin focus {
-	@content;
 	&:focus-visible {
 		color: var(--black);
 	}
+	@content;
 }
 /*@mixin active {
 	@content;
@@ -49,13 +49,12 @@ $container: 1510px;
 }
 */
 @mixin container {
-	@content;
 	max-width: calc($container + var(--paddingInline) * 2);
 	margin: 0 auto;
 	padding-inline: var(--paddingInline);
+	@content;
 }
 @mixin hover {
-	@content;
 	&::before {
 		content: "";
 		position: absolute;
@@ -72,6 +71,7 @@ $container: 1510px;
 			transform: translateX(-50%) scale(1);
 		}
 	}
+	@content;
 }
 @mixin hover-footer {
 	&::before {
@@ -90,4 +90,5 @@ $container: 1510px;
 			transform: scale(1);
 		}
 	}
+	@content;
 }
