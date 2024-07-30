@@ -38,12 +38,12 @@
 	}
 	// .footer__title
 	&__title {
+		@include title;
 		font-size: clamp(32px, vwm(52px), 52px);
 		font-weight: 400;
 		line-height: 1.15;
 		letter-spacing: -0.08em;
 		margin-bottom: 32px;
-		@include title;
 		@include m {
 			text-align: center;
 			line-height: 1.25;
